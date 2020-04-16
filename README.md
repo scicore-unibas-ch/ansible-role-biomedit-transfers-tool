@@ -1,3 +1,7 @@
+[![Build Status](https://travis-ci.org/scicore-unibas-ch/ansible-role-biomedit-transfers-tool.svg?branch=master)](https://travis-ci.org/scicore-unibas-ch/ansible-role-biomedit-transfers-tool)
+[![Ansible Galaxy](https://img.shields.io/badge/galaxy-scicore.biomedit_transfers_tool-blue.svg)](https://galaxy.ansible.com/scicore/biomedit_transfers_tool)
+
+
 ansible-role-biomedit-transfers-tool
 =========
 
