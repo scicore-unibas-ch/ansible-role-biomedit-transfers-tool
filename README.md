@@ -14,10 +14,11 @@ Role Variables
 --------------
 
 ```
+# which version of the SETT tool to install?
 # Check available versions in https://git.dcc.sib.swiss/biwg/biomedit-transfers/-/releases
 biomedit_transfers_tool_version: 0.10.2
 
-# SETT will be installed in a virtualenv in this path
+# SETT tool will be installed in a virtualenv in this path
 biomedit_transfers_tool_venv_path: "/opt/sett"
 
 # should we install the epel-release rpm to enable EPEL yum repo?
