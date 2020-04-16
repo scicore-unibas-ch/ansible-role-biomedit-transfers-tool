@@ -20,6 +20,11 @@
     name: python-setuptools
     state: installed
 
+- name: Install libxkbcommon-x11 . Dependency for the GUI
+  yum:
+    name: libxkbcommon-x11
+    state: installed
+
 - name: Create the virtualenv and upgraded pip and setuptools
   pip:
     name:
