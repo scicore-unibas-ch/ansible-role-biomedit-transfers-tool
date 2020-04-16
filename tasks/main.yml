@@ -13,7 +13,11 @@
       - python3
       - python3-pip
       - python3-virtualenv
-      - python-setuptools  # this is required by the ansible pip module
+    state: installed
+
+- name: Install python2-setuptools required by the ansible pip module
+  yum:
+    name: python-setuptools
     state: installed
 
 - name: Create the virtualenv and upgraded pip and setuptools
