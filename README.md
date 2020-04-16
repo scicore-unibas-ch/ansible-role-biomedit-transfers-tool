@@ -1,29 +1,27 @@
 ansible-role-biomedit-transfers-tool
 =========
 
-Install the BiomedIT transfer tool in a virtualenv
+Install the BiomedIT transfer tool in a virtualenv.
 
-Requirements
-------------
+Tested on Centos7
 
-Any pre-requisites that may not be covered by Ansible itself or the role should be mentioned here. For instance, if the role uses the EC2 module, it may be a good idea to mention in this section that the boto package is required.
 
 Role Variables
 --------------
 
-A description of the settable variables for this role should go here, including any variables that are in defaults/main.yml, vars/main.yml, and any variables that can/should be set via parameters to the role. Any variables that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.) should be mentioned here as well.
+```
+# Check available versions in https://git.dcc.sib.swiss/biwg/biomedit-transfers/-/releases
+biomedit_transfers_tool_version: 0.10.2
 
-Dependencies
-------------
+# SETT will be installed in a virtualenv in this path
+biomedit_transfers_tool_venv_path: "/opt/sett"
 
-A list of other roles hosted on Galaxy should go here, plus any details in regards to parameters that may need to be set for other roles, or variables that are used from other roles.
+# should we install the epel-release rpm to enable EPEL yum repo?
+biomedit_transfers_tool_install_epel: yes
 
-Example Playbook
-----------------
-
-    - hosts: servers
-      roles:
-         - { role: ansible-role-biomedit-transfers-tool, var_name: 42 }
+# should we create a file in /etc/profile.d/ to add the binaries to PATH?
+biomedit_transfers_tool_add_to_path: yes
+```
 
 License
 -------
