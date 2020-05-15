@@ -16,7 +16,7 @@ Role Variables
 ```
 # which version of the SETT tool to install?
 # Check available versions in https://git.dcc.sib.swiss/biwg/biomedit-transfers/-/releases
-biomedit_transfers_tool_version: 0.10.2
+biomedit_transfers_tool_version: 1.0.0
 
 # SETT tool will be installed in a virtualenv in this path
 biomedit_transfers_tool_venv_path: "/opt/sett"
