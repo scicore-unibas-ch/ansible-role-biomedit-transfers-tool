@@ -13,3 +13,7 @@ biomedit_transfers_tool_install_epel: yes
 
 # should we create a file in /etc/profile.d/ to add the binaries to PATH?
 biomedit_transfers_tool_add_to_path: yes
+
+# deploy a config file to disable queries to pypi.org to check for newer versions
+# this is useful when deploying in an environment without internet access
+biomedit_transfers_tool_disable_version_check: no
