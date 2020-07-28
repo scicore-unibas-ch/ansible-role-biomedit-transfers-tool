@@ -1,0 +1,21 @@
+---
+
+- name: Debian/Ubuntu | Install virtualenv
+  apt:
+    name: virtualenv
+    state: present
+    update_cache: yes
+
+- name: Debian/Ubuntu | Install python-setuptools required by the ansible pip module
+  apt:
+    name: python-setuptools
+    state: present
+
+- name: Debian/Ubuntu | Install libxkbcommon-x11-0. Dependency for the GUI
+  apt:
+    name: libxkbcommon-x11-0
+    state: present
+
+- name: Debian/Ubuntu | Define virtualenv binary to use
+  set_fact:
+    _venv_command: "virtualenv"
