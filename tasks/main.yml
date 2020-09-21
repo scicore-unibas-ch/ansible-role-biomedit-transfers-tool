@@ -39,10 +39,22 @@
   when: biomedit_transfers_tool_add_to_path
 
 - name: Deploy a SETT config to disable version checks to pypi
-  template:
-    dest: /etc/sett/config.json
-    src: sett_config.json.j2
-    owner: root
-    group: root
-    mode: 0644
+  block:
+
+    - name: Create folder /etc/sett
+      file:
+        path: /etc/sett
+        owner: root
+        group: root
+        state: directory
+        mode: '0755'
+
+    - name: Deploy /etc/sett/config.json to disable version checks to pypi
+      template:
+        dest: /etc/sett/config.json
+        src: sett_config.json.j2
+        owner: root
+        group: root
+        mode: 0644
+
   when: biomedit_transfers_tool_disable_version_check
