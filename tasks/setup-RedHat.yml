@@ -19,9 +19,14 @@
     name: python-setuptools
     state: installed
 
-- name: RedHat | Install libxkbcommon-x11 . Dependency for the GUI
+- name: RedHat | Install dependencies for the GUI
   yum:
-    name: libxkbcommon-x11
+    name:
+      - libxkbcommon-x11
+      - xcb-util-wm
+      - xcb-util-image
+      - xcb-util-keysyms
+      - xcb-util-renderutil
     state: installed
 
 - name: RedHat | Define virtualenv binary to use
