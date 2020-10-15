@@ -1,22 +1,27 @@
 ---
 
-- name: RedHat | Install EPEL yum repo to install pyton3.6
+- name: RedHat | Enable EPEL
   yum:
     name: epel-release
     state: installed
   when: biomedit_transfers_tool_install_epel
 
-- name: RedHat | Install python3 and virtualenv from EPEL
-  yum:
-    name:
-      - python3
-      - python3-pip
-      - python3-virtualenv
-    state: installed
-
 - name: RedHat | Install python2-setuptools required by the ansible pip module
   yum:
     name: python-setuptools
+    state: installed
+
+- name: RedHat | Enable centos-release-scl repository
+  yum:
+    name: centos-release-scl
+    state: installed
+  when: biomedit_transfers_tool_install_epel
+
+- name: RedHat | Install python3.8
+  yum:
+    name:
+     - rh-python38
+     - rh-python38-python-pip
     state: installed
 
 - name: RedHat | Install dependencies for the GUI
@@ -31,4 +36,4 @@
 
 - name: RedHat | Define virtualenv binary to use
   set_fact:
-    _venv_command: "virtualenv-3"
+   _venv_command: "/opt/rh/rh-python38/root/usr/bin/python3.8 -m venv"
