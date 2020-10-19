@@ -20,8 +20,8 @@
 - name: RedHat | Install python3.8
   yum:
     name:
-     - rh-python38
-     - rh-python38-python-pip
+      - rh-python38
+      - rh-python38-python-pip
     state: installed
 
 - name: RedHat | Install dependencies for the GUI
@@ -36,4 +36,4 @@
 
 - name: RedHat | Define virtualenv binary to use
   set_fact:
-   _venv_command: "/opt/rh/rh-python38/root/usr/bin/python3.8 -m venv"
+    _venv_command: "/opt/rh/rh-python38/root/usr/bin/python3.8 -m venv"
