@@ -15,7 +15,7 @@
   yum:
     name: centos-release-scl
     state: installed
-  when: biomedit_transfers_tool_install_epel
+  when: biomedit_transfers_tool_install_scl_repo
 
 - name: RedHat | Install python3.8
   yum:
