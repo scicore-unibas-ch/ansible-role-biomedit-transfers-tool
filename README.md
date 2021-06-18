@@ -14,10 +14,6 @@ Role Variables
 --------------
 
 ```
-# which version of the SETT tool to install?
-# Check available versions in https://pypi.org/project/sett/
-biomedit_transfers_tool_version: 2.2.0
-
 # SETT tool will be installed in a virtualenv in this path
 biomedit_transfers_tool_venv_path: "/opt/sett"
 
