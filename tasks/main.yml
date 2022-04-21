@@ -27,6 +27,7 @@
     virtualenv: "{{ biomedit_transfers_tool_venv_path }}"
   environment: "{{ proxy_env if proxy_env is defined else {} }}"
   when: _install_sett_legacy
+  tags: skip_ansible_lint
 
 - name: Install sett
   ansible.builtin.pip:
@@ -34,6 +35,7 @@
     state: latest
     virtualenv: "{{ biomedit_transfers_tool_venv_path }}"
   environment: "{{ proxy_env if proxy_env is defined else {} }}"
+  tags: skip_ansible_lint
 
 - name: Symlink SET binaries to /usr/local/bin/
   ansible.builtin.file:
