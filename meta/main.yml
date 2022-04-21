@@ -3,6 +3,7 @@ galaxy_info:
 
   author: Pablo Escobar
   description: Install the BiomedIT transfer tool in a virtualenv
+  namespace: scicore
   role_name: biomedit_transfers_tool
   company: sciCORE
   license: BSD
