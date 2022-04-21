@@ -1,31 +1,31 @@
 ---
 
 - name: RedHat | Enable EPEL
-  yum:
+  ansible.builtin.yum:
     name: epel-release
     state: installed
   when: biomedit_transfers_tool_install_epel
 
 - name: RedHat | Install python2-setuptools required by the ansible pip module
-  yum:
+  ansible.builtin.yum:
     name: python-setuptools
     state: installed
 
 - name: RedHat | Enable centos-release-scl repository
-  yum:
+  ansible.builtin.yum:
     name: centos-release-scl
     state: installed
   when: biomedit_transfers_tool_install_scl_repo
 
 - name: RedHat | Install python3.8
-  yum:
+  ansible.builtin.yum:
     name:
       - rh-python38
       - rh-python38-python-pip
     state: installed
 
 - name: RedHat | Install dependencies for the GUI
-  yum:
+  ansible.builtin.yum:
     name:
       - libxkbcommon-x11
       - xcb-util-wm
@@ -35,11 +35,11 @@
     state: installed
 
 - name: RedHat | Define virtualenv binary to use
-  set_fact:
+  ansible.builtin.set_fact:
     _venv_command: "/opt/rh/rh-python38/root/usr/bin/python3.8 -m venv"
 
 - name: RedHat 7 | Define variable to install sett[legacy] on Centos7
-  set_fact:
+  ansible.builtin.set_fact:
     _install_sett_legacy: true
   when:
     - ansible_os_family == "RedHat"
